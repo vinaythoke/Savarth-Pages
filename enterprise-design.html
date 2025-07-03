@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarvarth | Enterprise Design & Digital Transformation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #4f46e5, #9333ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section-padding {
+            padding: 6rem 1rem;
+        }
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 8rem 2rem;
+            }
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #4f46e5;
+            animation: spin 1s ease infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="text-slate-800 bg-gradient-to-br from-slate-50 via-white to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950 transition-colors duration-500">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-slate-200 shadow-lg dark:bg-slate-900/80 dark:border-slate-800 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-extrabold tracking-tight">
+                        <span class="gradient-text">Sarvarth</span>
+                    </a>
+                </div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#problem" class="text-slate-600 hover:text-indigo-600 transition-colors font-medium">The Gap</a>
+                    <a href="#solution" class="text-slate-600 hover:text-indigo-600 transition-colors font-medium">Our Distinction</a>
+                    <a href="#verticals" class="text-slate-600 hover:text-indigo-600 transition-colors font-medium">Industries</a>
+                    <a href="#ai-brief" class="text-slate-600 hover:text-indigo-600 transition-colors font-medium">AI Brief</a>
+                    <a href="#results" class="text-slate-600 hover:text-indigo-600 transition-colors font-medium">Results</a>
+                </nav>
+                <div class="flex items-center gap-2">
+                    <button id="dark-toggle" class="hidden md:inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-colors" aria-label="Toggle dark mode">
+                        <svg id="dark-toggle-icon" class="w-6 h-6 text-slate-600 dark:text-slate-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path id="sun-icon" class="block dark:hidden" stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m8.66-12.66l-.71.71M4.05 19.95l-.71.71M21 12h-1M4 12H3m16.66 4.66l-.71-.71M4.05 4.05l-.71-.71M12 5a7 7 0 100 14a7 7 0 000-14z"/><path id="moon-icon" class="hidden dark:block" stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/></svg>
+                    </button>
+                    <a href="#contact" class="cta-button hidden md:inline-block bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 text-white font-semibold py-2 px-6 rounded-xl shadow-lg hover:from-indigo-600 hover:to-purple-600 text-base animate-gradient-x border-2 border-transparent hover:border-indigo-400 transition-all duration-300">
+                        Book a Session
+                    </a>
+                    <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 bg-white border-t border-slate-200 dark:bg-slate-900 dark:border-slate-800">
+            <a href="#problem" class="block text-slate-600 hover:text-indigo-600 transition-colors py-2 font-medium">The Gap</a>
+            <a href="#solution" class="block text-slate-600 hover:text-indigo-600 transition-colors py-2 font-medium">Our Distinction</a>
+            <a href="#verticals" class="block text-slate-600 hover:text-indigo-600 transition-colors py-2 font-medium">Industries</a>
+            <a href="#ai-brief" class="block text-slate-600 hover:text-indigo-600 transition-colors py-2 font-medium">AI Brief</a>
+            <a href="#results" class="block text-slate-600 hover:text-indigo-600 transition-colors py-2 font-medium">Results</a>
+            <a href="#contact" class="block w-full text-center bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 text-white font-semibold py-3 px-5 rounded-xl shadow-lg hover:from-indigo-600 hover:to-purple-600 mt-4 border-2 border-transparent hover:border-indigo-400 transition-all duration-300">
+                Book a Strategic Session
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-white/80 dark:bg-slate-900/80 pt-36 pb-20 md:pt-52 md:pb-32 relative overflow-hidden animate-fadeIn">
+            <div class="absolute inset-0 pointer-events-none z-0">
+                <div class="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-br from-indigo-200 via-purple-200 to-transparent rounded-full blur-3xl opacity-40"></div>
+                <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-to-tr from-indigo-100 via-purple-100 to-transparent rounded-full blur-3xl opacity-30"></div>
+            </div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-slate-900 dark:text-white leading-tight mb-6 animate-fadeIn">
+                    Performance Follows <span class="gradient-text">Experience</span>.
+                </h1>
+                <p class="mt-6 max-w-3xl mx-auto text-xl md:text-2xl text-slate-600 dark:text-slate-300 animate-fadeIn">
+                    We close the "Enterprise Experience Gap," transforming your mission-critical platforms from powerful but frustrating tools into strategic assets that unlock productivity and drive measurable business growth.
+                </p>
+                <div class="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4 animate-fadeIn">
+                    <a href="#contact" class="cta-button bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 text-white font-semibold py-4 px-10 rounded-2xl shadow-xl text-lg border-2 border-transparent hover:border-indigo-400 transition-all duration-300 animate-gradient-x">
+                        Begin Your Transformation
+                    </a>
+                    <a href="#solution" class="cta-button bg-white/90 dark:bg-slate-800 text-indigo-600 dark:text-indigo-300 font-semibold py-4 px-10 rounded-2xl shadow-xl hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700 text-lg transition-all duration-300">
+                        Learn How
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Problem Section -->
+        <section id="problem" class="section-padding animate-fadeIn">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="flex items-center justify-center gap-2 text-sm font-bold uppercase tracking-widest text-indigo-600">
+                        <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"/></svg>
+                        The Enterprise Experience Gap
+                    </h2>
+                    <p class="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                        Are Your Digital Investments Delivering Their Full Potential?
+                    </p>
+                    <p class="mt-6 text-lg md:text-xl text-slate-600 dark:text-slate-300">
+                        Multi-million dollar systems fail for a simple reason: the user experience is an afterthought. This gap between powerful technology and poor usability costs enterprises billions in lost productivity, low adoption, and unrealized ROI.
+                    </p>
+                </div>
+                <div class="mt-16 grid md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white/90 dark:bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:shadow-indigo-200 animate-fadeIn">
+                        <div class="mx-auto flex items-center justify-center h-14 w-14 rounded-full bg-red-100 dark:bg-red-900/30">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-red-600 dark:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0v-8m0 8l-8-8-4 4-6-6" /></svg>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold text-slate-900 dark:text-white">Low User Adoption</h3>
+                        <p class="mt-2 text-slate-600 dark:text-slate-300">Employees and customers revert to inefficient workarounds, abandoning the very tools designed to help them.</p>
+                    </div>
+                    <div class="bg-white/90 dark:bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:shadow-indigo-200 animate-fadeIn">
+                        <div class="mx-auto flex items-center justify-center h-14 w-14 rounded-full bg-amber-100 dark:bg-amber-900/30">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-amber-600 dark:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01" /></svg>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold text-slate-900 dark:text-white">Skyrocketing Costs</h3>
+                        <p class="mt-2 text-slate-600 dark:text-slate-300">Massive budgets are wasted on extensive training, constant support tickets, and costly rework.</p>
+                    </div>
+                    <div class="bg-white/90 dark:bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:shadow-indigo-200 animate-fadeIn">
+                        <div class="mx-auto flex items-center justify-center h-14 w-14 rounded-full bg-blue-100 dark:bg-blue-900/30">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V7a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V15a2 2 0 01-2 2z" /></svg>
+                        </div>
+                        <h3 class="mt-6 text-xl font-bold text-slate-900 dark:text-white">Stifled Productivity</h3>
+                        <p class="mt-2 text-slate-600 dark:text-slate-300">Complex, unintuitive interfaces slow down your best people and prevent your technology from becoming a true competitive advantage.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Solution Section -->
+        <section id="solution" class="section-padding bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-sm font-bold uppercase tracking-widest text-indigo-600">The Sarvarth Distinction</h2>
+                    <p class="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+                        A Strategic Partnership for Enterprise Design Excellence
+                    </p>
+                    <p class="mt-6 text-lg text-slate-600">
+                        We don't just create beautiful interfaces. We deliver measurable business transformation through our integrated system of People, Process, and Performance.
+                    </p>
+                </div>
+                <div class="mt-16 grid lg:grid-cols-3 gap-12">
+                    <!-- Pillar 1: People -->
+                    <div class="flex">
+                        <div class="flex-shrink-0 mr-6">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-indigo-600 text-white shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">People: Senior-Led Partnership</h3>
+                            <p class="mt-2 text-slate-600">Your vision is executed by the same senior experts who sold it. Every project is led by a hands-on Partner-level strategist, ensuring deep collaboration and eliminating the communication gaps that plague traditional agencies.</p>
+                        </div>
+                    </div>
+                    <!-- Pillar 2: Process -->
+                    <div class="flex">
+                        <div class="flex-shrink-0 mr-6">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-indigo-600 text-white shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">Process: The Clarity Canvas™</h3>
+                            <p class="mt-2 text-slate-600">Our proprietary methodology de-risks innovation. We blend behavioral science, AI-infused workflows, and rigorous design systems to translate business complexity into human clarity, delivering solutions that are both intuitive and intelligent.</p>
+                        </div>
+                    </div>
+                    <!-- Pillar 3: Performance -->
+                    <div class="flex">
+                        <div class="flex-shrink-0 mr-6">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-indigo-600 text-white shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">Performance: Measurable Transformation</h3>
+                            <p class="mt-2 text-slate-600">Success isn't subjective; it's quantifiable. We align on your core business KPIs from day one and deliver a final Transformation Package that documents our impact on adoption, efficiency, and your bottom line.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Verticals Section -->
+        <section id="verticals" class="section-padding">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-sm font-bold uppercase tracking-widest text-indigo-600">Industry-Specific Expertise</h2>
+                    <p class="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+                        Design Adapted to Your World
+                    </p>
+                    <p class="mt-6 text-lg text-slate-600">
+                        We speak your language. Our deep vertical experience means we understand the unique constraints, regulations, and user behaviors of your industry, allowing us to create solutions with immediate context and impact.
+                    </p>
+                </div>
+                <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-200 transform hover:-translate-y-2 transition-transform duration-300">
+                        <h3 class="text-xl font-bold text-slate-900">FinTech & Financial Services</h3>
+                        <p class="mt-4 text-slate-600">We distill immense data density into clear, actionable insights, building trust and navigating complex regulations to make financial tools comprehensible and secure.</p>
+                        <p class="mt-4 text-sm font-semibold text-indigo-600">PROJECT HIGHLIGHT:</p>
+                        <p class="mt-1 text-sm text-slate-500">Reduced trader onboarding time by 75% for a premier investment bank's trading platform.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-200 transform hover:-translate-y-2 transition-transform duration-300">
+                        <h3 class="text-xl font-bold text-slate-900">Healthcare & Life Sciences</h3>
+                        <p class="mt-4 text-slate-600">We design resilient, error-resistant interfaces for high-stress clinical environments, prioritizing patient safety, data privacy, and HIPAA/FDA compliance.</p>
+                        <p class="mt-4 text-sm font-semibold text-indigo-600">PROJECT HIGHLIGHT:</p>
+                        <p class="mt-1 text-sm text-slate-500">Contributed to a 15% reduction in procedure time for a next-gen robotic surgery system.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-200 transform hover:-translate-y-2 transition-transform duration-300 md:col-span-2 lg:col-span-1">
+                        <h3 class="text-xl font-bold text-slate-900">B2B & Enterprise SaaS</h3>
+                        <p class="mt-4 text-slate-600">We transform complex multi-user workflows into consumer-grade experiences that drive adoption, reduce churn, and provide a sustainable competitive advantage.</p>
+                        <p class="mt-4 text-sm font-semibold text-indigo-600">PROJECT HIGHLIGHT:</p>
+                        <p class="mt-1 text-sm text-slate-500">Drove a 25% increase in daily active users for a market-leading CRM platform.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Strategy Brief Section -->
+        <section id="ai-brief" class="section-padding bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+                        ✨ Get an Instant <span class="gradient-text">AI-Powered</span> Strategy Brief
+                    </h2>
+                    <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-600">
+                        Have a complex business challenge? Describe it below, and our AI strategist will generate a high-level brief to kickstart our conversation. See how we think, instantly.
+                    </p>
+                    <div class="mt-4 flex justify-center">
+                        <span class="inline-flex items-center gap-2 bg-yellow-100 text-yellow-800 text-sm font-medium px-4 py-2 rounded-full shadow-sm animate-pulse">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"/></svg>
+                            Demo only: AI Brief Generator is not functional on GitHub Pages.
+                        </span>
+                    </div>
+                </div>
+                <div class="mt-12 max-w-3xl mx-auto">
+                    <div class="bg-white/80 p-8 rounded-2xl shadow-2xl border border-slate-200 backdrop-blur-md transition-all duration-300 hover:shadow-indigo-200">
+                        <div class="w-full">
+                            <label for="challenge-input" class="block text-sm font-medium text-slate-700 mb-2">Describe your business challenge or goal:</label>
+                            <textarea id="challenge-input" rows="5" class="w-full p-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition resize-none" placeholder="e.g., 'Our internal logistics software is clunky and causing shipping delays.' or 'We need to design a new mobile app for our field sales team to improve data entry.'" disabled></textarea>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <button id="generate-brief-button" class="cta-button bg-indigo-300 text-white font-semibold py-3 px-8 rounded-lg shadow-lg text-lg w-full sm:w-auto opacity-60 cursor-not-allowed" disabled>
+                                Generate Your Brief
+                            </button>
+                        </div>
+                    </div>
+                    <div id="brief-output-container" class="mt-8">
+                        <div id="brief-loading" class="hidden justify-center items-center flex-col text-center">
+                            <div class="spinner"></div>
+                            <p class="mt-4 text-slate-600 font-medium">Our AI strategist is analyzing your challenge...</p>
+                        </div>
+                        <div id="brief-result" class="hidden bg-white p-8 rounded-2xl shadow-lg border border-slate-200 prose prose-slate max-w-none">
+                            <!-- AI-generated content will be injected here -->
+                        </div>
+                         <div id="brief-error" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg relative" role="alert">
+                            <strong class="font-bold">Oops!</strong>
+                            <span class="block sm:inline">Something went wrong while generating the brief. Please try again.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results / Case Study Section -->
+        <section id="results" class="section-padding bg-indigo-700 text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">The Proof is in the Performance</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-indigo-200">We measure our success by the tangible impact we create for our partners.</p>
+                </div>
+                <div class="mt-16 bg-white/10 p-8 md:p-12 rounded-2xl ring-1 ring-white/20">
+                    <div class="grid md:grid-cols-5 gap-8 items-center">
+                        <div class="md:col-span-2">
+                            <h3 class="text-2xl font-bold">CRM Platform Overhaul</h3>
+                            <p class="mt-2 text-indigo-200">A market leader was losing share to modern competitors. We were tasked with radically streamlining their core platform to win back users.</p>
+                            <div class="mt-6 pt-6 border-t border-white/20">
+                                <p class="text-sm uppercase font-semibold text-indigo-300">Client Quote</p>
+                                <blockquote class="mt-2 text-indigo-100 italic">"Sarvarth was a true partner. They understood our strategic goals and delivered an experience that has become our key differentiator in winning major new accounts."</blockquote>
+                            </div>
+                        </div>
+                        <div class="md:col-span-3 grid grid-cols-2 gap-8 text-center">
+                            <div class="bg-white/20 p-6 rounded-xl">
+                                <p class="text-4xl md:text-5xl font-extrabold text-white">35%</p>
+                                <p class="mt-1 text-indigo-200">Increase in User Adoption</p>
+                            </div>
+                            <div class="bg-white/20 p-6 rounded-xl">
+                                <p class="text-4xl md:text-5xl font-extrabold text-white">40%</p>
+                                <p class="mt-1 text-indigo-200">Faster Feature Development</p>
+                            </div>
+                            <div class="bg-white/20 p-6 rounded-xl">
+                                <p class="text-4xl md:text-5xl font-extrabold text-white">60%</p>
+                                <p class="mt-1 text-indigo-200">Reduction in Support Tickets</p>
+                            </div>
+                            <div class="bg-white/20 p-6 rounded-xl">
+                                <p class="text-4xl md:text-5xl font-extrabold text-white">4.8/5</p>
+                                <p class="mt-1 text-indigo-200">User Satisfaction Score</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contact" class="section-padding">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center bg-slate-100 p-8 md:p-16 rounded-2xl border border-slate-200">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Ready to Transform Your Enterprise Experience?</h2>
+                    <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-600">
+                        Let's discuss how a strategic design partnership can unlock the true potential of your technology. Book a complimentary, no-obligation Strategic Design Session with a Sarvarth Partner today.
+                    </p>
+                    <div class="mt-10">
+                        <a href="mailto:hello@sarvarth.com?subject=Strategic%20Design%20Session%20Inquiry" class="cta-button bg-indigo-600 text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:bg-indigo-700 text-lg">
+                            Book Your Strategic Session
+                        </a>
+                    </div>
+                    <p class="mt-6 text-sm text-slate-500">We'll dive into your specific challenges and outline a potential path to measurable success.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left">
+                    <a href="#" class="text-2xl font-bold tracking-tight text-white">
+                        Sarvarth
+                    </a>
+                    <p class="mt-2 text-sm">Translating Business Complexity into Human Clarity.</p>
+                </div>
+                <div class="mt-8 md:mt-0 flex space-x-6">
+                    <a href="#" class="hover:text-white transition-colors">Twitter</a>
+                    <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                    <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-slate-800 text-center text-sm">
+                <p>&copy; 2025 Sarvarth. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html> 
