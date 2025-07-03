@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarvarth | From QA Bottleneck to Business Accelerator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #4f46e5, #0ea5e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(circle at 15% 50%, #e0e7ff, transparent 40%),
+                radial-gradient(circle at 85% 30%, #dbeafe, transparent 40%);
+        }
+        .section-bg {
+            background-color: #f8fafc;
+        }
+        .gemini-loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4f46e5;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .section-padding {
+            padding: 6rem 1rem;
+        }
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 8rem 2rem;
+            }
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #4f46e5;
+            animation: spin 1s ease infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-900">sarvārth</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#services" class="text-gray-600 hover:text-indigo-600 transition-colors">Services</a>
+                <a href="#ai-generator" class="text-gray-600 hover:text-indigo-600 transition-colors">AI Generator</a>
+                <a href="#advantage" class="text-gray-600 hover:text-indigo-600 transition-colors">Our Advantage</a>
+                <a href="#industries" class="text-gray-600 hover:text-indigo-600 transition-colors">Industries</a>
+                <a href="#process" class="text-gray-600 hover:text-indigo-600 transition-colors">Process</a>
+            </nav>
+            <a href="#contact" class="hidden md:inline-block bg-indigo-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-indigo-700 transition-all shadow-sm">
+                Schedule a Consultation
+            </a>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-lucide="menu" class="h-6 w-6 text-gray-800"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-4">
+            <a href="#services" class="block text-gray-600 hover:text-indigo-600">Services</a>
+            <a href="#ai-generator" class="block text-gray-600 hover:text-indigo-600">AI Generator</a>
+            <a href="#advantage" class="block text-gray-600 hover:text-indigo-600">Our Advantage</a>
+            <a href="#industries" class="block text-gray-600 hover:text-indigo-600">Industries</a>
+            <a href="#process" class="block text-gray-600 hover:text-indigo-600">Process</a>
+            <a href="#contact" class="block bg-indigo-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-indigo-700 text-center">
+                Schedule a Consultation
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+                    From QA Bottleneck to <span class="gradient-text">Business Accelerator</span>
+                </h1>
+                <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-gray-600">
+                    Sarvarth transforms quality assurance from a costly delay into a strategic advantage. We engineer quality into your development process, enabling you to innovate faster, de-risk your digital transformation, and ship with absolute confidence.
+                </p>
+                <div class="mt-10 flex justify-center items-center gap-4">
+                    <a href="#contact" class="bg-indigo-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-indigo-700 transition-all shadow-lg">
+                        Book a Free Assessment
+                    </a>
+                    <a href="#services" class="bg-white text-indigo-600 font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all shadow-lg border border-gray-200">
+                        Explore Our Services
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Bar -->
+        <div class="bg-white py-8">
+            <div class="container mx-auto px-6">
+                <p class="text-center text-sm font-semibold text-gray-500 uppercase tracking-wider">Trusted by industry leaders to deliver quality at scale</p>
+                <div class="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+                    <img src="https://placehold.co/150x50/f0f0f0/a0a0a0?text=InnovateCorp" alt="InnovateCorp Logo" class="mx-auto opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="https://placehold.co/150x50/f0f0f0/a0a0a0?text=FinSecure" alt="FinSecure Logo" class="mx-auto opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="https://placehold.co/150x50/f0f0f0/a0a0a0?text=HealthPlus" alt="HealthPlus Logo" class="mx-auto opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="https://placehold.co/150x50/f0f0f0/a0a0a0?text=RetailFast" alt="RetailFast Logo" class="mx-auto opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="https://placehold.co/150x50/f0f0f0/a0a0a0?text=GlobalTelco" alt="GlobalTelco Logo" class="mx-auto opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="https://placehold.co/150x50/f0f0f0/a0a0a0?text=LogicSys" alt="LogicSys Logo" class="mx-auto opacity-60 hover:opacity-100 transition-opacity">
+                </div>
+            </div>
+        </div>
+
+        <!-- Origin Story Section -->
+        <section class="py-20 md:py-28 section-bg">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">We Built the Solution We Wished We Had</h2>
+                    <p class="mt-4 text-lg text-gray-600">Sarvarth was born from a shared frustration. As senior engineers inside large enterprises, our founders were tired of seeing innovation stalled by slow, unreliable testing. We experienced the pain of flaky tests derailing product launches and decided to build a better way.</p>
+                </div>
+                <div class="mt-16 grid md:grid-cols-3 gap-12 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="bg-indigo-100 text-indigo-600 rounded-full p-4">
+                            <i data-lucide="zap-off" class="h-8 w-8"></i>
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold text-gray-900">The Problem</h3>
+                        <p class="mt-2 text-gray-600">Traditional QA couldn't keep pace with Agile & DevOps, creating friction, delaying releases, and increasing the cost of quality.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-indigo-100 text-indigo-600 rounded-full p-4">
+                            <i data-lucide="lightbulb" class="h-8 w-8"></i>
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold text-gray-900">The Insight</h3>
+                        <p class="mt-2 text-gray-600">Quality isn't a final step; it's an engineering discipline that must be woven into the entire development lifecycle.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-indigo-100 text-indigo-600 rounded-full p-4">
+                            <i data-lucide="rocket" class="h-8 w-8"></i>
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold text-gray-900">Our Mission</h3>
+                        <p class="mt-2 text-gray-600">To transform quality from a bottleneck into a strategic enabler that accelerates business velocity and de-risks innovation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">A Comprehensive Suite of Quality Engineering Services</h2>
+                    <p class="mt-4 text-lg text-gray-600">We offer a range of flexible, high-impact services designed to meet you where you are and get you where you need to go—faster.</p>
+                </div>
+                <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+                        <div class="bg-sky-100 text-sky-600 rounded-lg p-3 inline-block">
+                            <i data-lucide="shield-check" class="h-7 w-7"></i>
+                        </div>
+                        <h3 class="mt-4 text-xl font-bold text-gray-900">Managed Services</h3>
+                        <p class="mt-2 text-gray-600">Offload your entire testing burden to our expert team for comprehensive, continuous quality assurance with clear SLAs and data-driven insights.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+                        <div class="bg-emerald-100 text-emerald-600 rounded-lg p-3 inline-block">
+                            <i data-lucide="bot" class="h-7 w-7"></i>
+                        </div>
+                        <h3 class="mt-4 text-xl font-bold text-gray-900">Regression Automation</h3>
+                        <p class="mt-2 text-gray-600">Ensure new changes don't break existing functionality with our pragmatic approach to reliable, high-ROI automated regression testing.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+                        <div class="bg-amber-100 text-amber-600 rounded-lg p-3 inline-block">
+                            <i data-lucide="bar-chart-3" class="h-7 w-7"></i>
+                        </div>
+                        <h3 class="mt-4 text-xl font-bold text-gray-900">Testing Maturity Assessment</h3>
+                        <p class="mt-2 text-gray-600">Get a strategic roadmap to higher quality. We assess your current capabilities and identify key areas for impactful improvement.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+                        <div class="bg-rose-100 text-rose-600 rounded-lg p-3 inline-block">
+                            <i data-lucide="search" class="h-7 w-7"></i>
+                        </div>
+                        <h3 class="mt-4 text-xl font-bold text-gray-900">Test Tool Evaluation</h3>
+                        <p class="mt-2 text-gray-600">Receive unbiased, expert guidance on selecting and optimizing the best testing tools for your unique needs, maximizing impact and lowering TCO.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+                        <div class="bg-violet-100 text-violet-600 rounded-lg p-3 inline-block">
+                            <i data-lucide="users" class="h-7 w-7"></i>
+                        </div>
+                        <h3 class="mt-4 text-xl font-bold text-gray-900">Staff Augmentation</h3>
+                        <p class="mt-2 text-gray-600">Instantly scale your testing capacity with our skilled, experienced professionals who integrate seamlessly into your existing team.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col justify-center items-center text-center">
+                        <i data-lucide="arrow-right-circle" class="h-10 w-10 text-indigo-600"></i>
+                        <h3 class="mt-4 text-xl font-bold text-gray-900">Your Custom Solution</h3>
+                        <p class="mt-2 text-gray-600">Have a unique challenge? Let's talk. We build tailored solutions to solve your most complex quality problems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- AI Test Case Generator Section -->
+        <section id="ai-generator" class="py-20 md:py-28 section-bg">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Experience AI-Powered Test Generation</h2>
+                    <p class="mt-4 text-lg text-gray-600">Describe a feature or user story, and let our AI assistant generate relevant test cases for you. See the future of quality engineering in action.</p>
+                    <div class="mt-4 flex justify-center">
+                        <span class="inline-flex items-center gap-2 bg-yellow-100 text-yellow-800 text-sm font-medium px-4 py-2 rounded-full shadow-sm animate-pulse">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"/></svg>
+                            Demo only: AI Test Case Generator is not functional on GitHub Pages.
+                        </span>
+                    </div>
+                </div>
+                <div class="mt-12 max-w-4xl mx-auto bg-white p-8 rounded-xl border border-gray-200 shadow-lg">
+                    <div>
+                        <label for="feature-description" class="block text-sm font-medium text-gray-700">Feature Description or User Story</label>
+                        <textarea id="feature-description" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="e.g., As a user, I want to be able to reset my password using my email address." disabled></textarea>
+                    </div>
+                    <div class="mt-6">
+                        <button id="generate-test-cases-btn" class="w-full flex items-center justify-center gap-x-2 bg-indigo-400 text-white font-semibold px-8 py-3 rounded-lg opacity-60 cursor-not-allowed" disabled>
+                            <span>✨ Generate Test Cases</span>
+                        </button>
+                    </div>
+                    <div id="test-case-results" class="mt-8 hidden">
+                        <h3 class="text-xl font-bold text-gray-900">Generated Test Cases:</h3>
+                        <div id="test-case-loader" class="mt-4 flex justify-center hidden">
+                            <div class="gemini-loader"></div>
+                        </div>
+                        <div id="test-case-output" class="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200 text-sm text-gray-700 whitespace-pre-wrap"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advantage Section -->
+        <section id="advantage" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">The Sarvarth Advantage</h2>
+                    <p class="mt-4 text-lg text-gray-600">We're not just another vendor. We're a strategic partner, uniquely positioned to deliver value where others can't.</p>
+                </div>
+                <div class="mt-16 grid md:grid-cols-2 gap-10">
+                    <div class="bg-white p-8 rounded-xl border border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-900 flex items-center">
+                            <i data-lucide="gem" class="h-6 w-6 text-indigo-500 mr-3"></i>
+                            Specialist Expertise, Enterprise Process
+                        </h3>
+                        <p class="mt-3 text-gray-600">We combine the deep domain expertise of a specialist firm with the rigorous, scalable processes that large enterprises demand. You get agility and discipline in one package.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl border border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-900 flex items-center">
+                            <i data-lucide="target" class="h-6 w-6 text-indigo-500 mr-3"></i>
+                            Pragmatic Automation & Measurable ROI
+                        </h3>
+                        <p class="mt-3 text-gray-600">We focus on Minimal Viable Automation (MVA), targeting high-risk areas first to deliver immediate value and a clear, rapid return on your investment.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl border border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-900 flex items-center">
+                            <i data-lucide="handshake" class="h-6 w-6 text-indigo-500 mr-3"></i>
+                            A True Partnership Model
+                        </h3>
+                        <p class="mt-3 text-gray-600">We don't just work for you; we work with you. Our experts embed into your team, building lasting capability, not long-term dependency.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl border border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-900 flex items-center">
+                            <i data-lucide="compass" class="h-6 w-6 text-indigo-500 mr-3"></i>
+                            Tool-Agnostic, Client-Centric Guidance
+                        </h3>
+                        <p class="mt-3 text-gray-600">As your unbiased, trusted advisor, our recommendations are always aligned with your best interests, not a sales quota for a specific tool.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industries Section -->
+        <section id="industries" class="py-20 md:py-28 section-bg">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Solutions Tailored for Your Industry</h2>
+                    <p class="mt-4 text-lg text-gray-600">We understand that every industry has unique challenges. Our deep domain expertise ensures we address the specific compliance, security, and performance needs of your vertical.</p>
+                </div>
+                <div id="industry-tabs" class="mt-12 max-w-4xl mx-auto">
+                    <div class="flex border-b border-gray-200">
+                        <button data-tab="bfsi" data-industry-name="BFSI" class="industry-tab active-tab flex-1 py-4 px-2 text-center font-semibold text-indigo-600 border-b-2 border-indigo-600">
+                            BFSI
+                        </button>
+                        <button data-tab="healthcare" data-industry-name="Healthcare" class="industry-tab flex-1 py-4 px-2 text-center font-semibold text-gray-500 hover:text-indigo-600">
+                            Healthcare
+                        </button>
+                        <button data-tab="retail" data-industry-name="Retail & E-commerce" class="industry-tab flex-1 py-4 px-2 text-center font-semibold text-gray-500 hover:text-indigo-600">
+                            Retail & E-commerce
+                        </button>
+                    </div>
+                    <div class="mt-8">
+                        <!-- BFSI Content -->
+                        <div id="bfsi" class="industry-content">
+                            <h3 class="text-2xl font-bold text-gray-900">Banking, Financial Services & Insurance</h3>
+                            <p class="mt-4 text-gray-600">In a sector defined by regulation and zero tolerance for error, we provide the assurance you need. We help you navigate complex compliance (GDPR, PSD2), secure sensitive data, and ensure the flawless performance of core banking systems and payment gateways.</p>
+                            <ul class="mt-6 space-y-3">
+                                <li class="flex items-start"><i data-lucide="check-circle-2" class="h-5 w-5 text-emerald-500 mr-3 mt-1 flex-shrink-0"></i><span><strong class="text-gray-800">Managed Services</strong> for regulatory adherence and SLA compliance.</span></li>
+                                <li class="flex items-start"><i data-lucide="check-circle-2" class="h-5 w-5 text-emerald-500 mr-3 mt-1 flex-shrink-0"></i><span><strong class="text-gray-800">Regression Automation</strong> to manage frequent regulatory updates without risk.</span></li>
+                                <li class="flex items-start"><i data-lucide="check-circle-2" class="h-5 w-5 text-emerald-500 mr-3 mt-1 flex-shrink-0"></i><span><strong class="text-gray-800">Maturity Assessment</strong> to de-risk legacy system modernization.</span></li>
+                            </ul>
+                             <button class="generate-industry-insights-btn mt-6 flex items-center justify-center gap-x-2 text-sm text-indigo-400 font-semibold opacity-60 cursor-not-allowed" disabled>
+                                ✨ Get AI Insights on Testing Trends
+                            </button>
+                        </div>
+                        <!-- Healthcare Content -->
+                        <div id="healthcare" class="industry-content hidden">
+                            <h3 class="text-2xl font-bold text-gray-900">Healthcare & Life Sciences</h3>
+                            <p class="mt-4 text-gray-600">With patient safety and data privacy as non-negotiable priorities, our services are built on a foundation of compliance and reliability. We ensure your systems meet stringent HIPAA requirements, guarantee interoperability (HL7/FHIR), and deliver the 24/7 reliability that patient care demands.</p>
+                            <ul class="mt-6 space-y-3">
+                                <li class="flex items-start"><i data-lucide="check-circle-2" class="h-5 w-5 text-emerald-500 mr-3 mt-1 flex-shrink-0"></i><span><strong class="text-gray-800">Specialized Teams</strong> with expertise in HIPAA, medical device validation, and EHR testing.</span></li>
+                                <li class="flex items-start"><i data-lucide="check-circle-2" class="h-5 w-5 text-emerald-500 mr-3 mt-1 flex-shrink-0"></i><span><strong class="text-gray-800">Maturity Assessment</strong> to identify and close critical compliance and security gaps.</span></li>
+                                <li class="flex items-start"><i data-lucide="check-circle-2" class="h-5 w-5 text-emerald-500 mr-3 mt-1 flex-shrink-0"></i><span><strong class="text-gray-800">Regression Automation</strong> for patient portals and telehealth platforms to protect patient safety.</span></li>
+                            </ul>
+                            <button class="generate-industry-insights-btn mt-6 flex items-center justify-center gap-x-2 text-sm text-indigo-400 font-semibold opacity-60 cursor-not-allowed" disabled>
+                                ✨ Get AI Insights on Testing Trends
+                            </button>
+                        </div>
+                        <!-- Retail Content -->
+                        <div id="retail" class="industry-content hidden">
+                            <h3 class="text-2xl font-bold text-gray-900">Retail & E-commerce</h3>
+                            <p class="mt-4 text-gray-600">In the hyper-competitive world of retail, customer experience is everything. We help you deliver flawless performance, especially during peak traffic events like Black Friday. Our services ensure omnichannel consistency, secure payment processing, and perfect cross-device compatibility.</p>
+                            <ul class="mt-6 space-y-3">
+                                <li class="flex items-start"><i data-lucide="check-circle-2" class="h-5 w-5 text-emerald-500 mr-3 mt-1 flex-shrink-0"></i><span><strong class="text-gray-800">Performance Engineering</strong> to handle massive traffic spikes and prevent revenue loss.</span></li>
+                                <li class="flex items-start"><i data-lucide="check-circle-2" class="h-5 w-5 text-emerald-500 mr-3 mt-1 flex-shrink-0"></i><span><strong class="text-gray-800">Regression Automation</strong> for the entire customer journey, from search to checkout.</span></li>
+                                <li class="flex items-start"><i data-lucide="check-circle-2" class="h-5 w-5 text-emerald-500 mr-3 mt-1 flex-shrink-0"></i><span><strong class="text-gray-800">Staff Augmentation</strong> with mobile and compatibility experts for a perfect UX on any device.</span></li>
+                            </ul>
+                            <button class="generate-industry-insights-btn mt-6 flex items-center justify-center gap-x-2 text-sm text-indigo-400 font-semibold opacity-60 cursor-not-allowed" disabled>
+                                ✨ Get AI Insights on Testing Trends
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">What Our Partners Say</h2>
+                    <p class="mt-4 text-lg text-gray-600">We measure our success by the success of our clients. Here's what they have to say about our partnership.</p>
+                </div>
+                <div class="mt-16 grid lg:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+                        <p class="text-gray-600">"Sarvarth didn't just give us testers; they gave us a strategy. Their Maturity Assessment was a game-changer. For the first time, we have a clear, data-driven roadmap to transform our quality process. They are true strategic partners."</p>
+                        <div class="mt-6 flex items-center">
+                            <img src="https://placehold.co/50x50/e0e7ff/4338ca?text=AS" alt="Avatar" class="rounded-full">
+                            <div class="ml-4">
+                                <p class="font-bold text-gray-900">Amelia Sterling</p>
+                                <p class="text-gray-500">VP of Engineering, InnovateCorp</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+                        <p class="text-gray-600">"The Sarvarth team cut our regression testing cycle from two weeks to just four hours. Their pragmatic automation approach delivered ROI almost immediately. Our developers are happier, and we're shipping features faster than ever before."</p>
+                        <div class="mt-6 flex items-center">
+                            <img src="https://placehold.co/50x50/dbeafe/1e40af?text=BJ" alt="Avatar" class="rounded-full">
+                            <div class="ml-4">
+                                <p class="font-bold text-gray-900">Ben Carter</p>
+                                <p class="text-gray-500">Director of Quality, FinSecure</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="py-20 md:py-28 section-bg">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Our Transparent Engagement Process</h2>
+                    <p class="mt-4 text-lg text-gray-600">We believe in a clear, structured partnership from day one. Here's how we get started.</p>
+                </div>
+                <div class="mt-16 relative">
+                    <!-- The connecting line -->
+                    <div class="hidden md:block absolute top-5 left-0 w-full h-0.5 bg-gray-200"></div>
+                    
+                    <div class="grid md:grid-cols-4 gap-12 relative">
+                        <div class="text-center">
+                            <div class="relative mb-4">
+                                <div class="mx-auto w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-lg z-10 relative">1</div>
+                            </div>
+                            <h3 class="font-bold text-lg text-gray-900">Discovery & Qualification</h3>
+                            <p class="text-gray-600 mt-1">We listen to understand your unique challenges, goals, and context.</p>
+                        </div>
+                        <div class="text-center">
+                             <div class="relative mb-4">
+                                <div class="mx-auto w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-lg z-10 relative">2</div>
+                            </div>
+                            <h3 class="font-bold text-lg text-gray-900">Strategic Assessment</h3>
+                            <p class="text-gray-600 mt-1">We often start with a high-value assessment to provide a clear, actionable roadmap.</p>
+                        </div>
+                        <div class="text-center">
+                             <div class="relative mb-4">
+                                <div class="mx-auto w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-lg z-10 relative">3</div>
+                            </div>
+                            <h3 class="font-bold text-lg text-gray-900">Tailored Proposal</h3>
+                            <p class="text-gray-600 mt-1">We present a detailed proposal with a clear scope, timeline, and transparent pricing.</p>
+                        </div>
+                        <div class="text-center">
+                             <div class="relative mb-4">
+                                <div class="mx-auto w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-lg z-10 relative">4</div>
+                            </div>
+                            <h3 class="font-bold text-lg text-gray-900">Kick-off & Partnership</h3>
+                            <p class="text-gray-600 mt-1">We ensure a smooth handover to our delivery team and begin our partnership for success.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA / Contact Section -->
+        <section id="contact" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="bg-indigo-700 rounded-2xl p-8 md:p-16 text-center relative overflow-hidden">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-indigo-600/50 rounded-full"></div>
+                    <div class="absolute -bottom-16 -left-10 w-52 h-52 bg-indigo-600/50 rounded-full"></div>
+                    
+                    <div class="relative z-10">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">Ready to Transform Your Quality Process?</h2>
+                        <p class="mt-4 max-w-2xl mx-auto text-lg text-indigo-200">
+                            Schedule a free, no-obligation consultation with our quality engineering experts. Let's discuss your challenges and build a plan to turn your QA function into a powerful engine for growth.
+                        </p>
+                        <div class="mt-10">
+                            <a href="mailto:hello@sarvarth.com" class="bg-white text-indigo-600 font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all shadow-lg">
+                                Schedule Your Free Assessment
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-12 gap-8">
+                <div class="md:col-span-4">
+                    <h3 class="text-2xl font-bold">sarvārth</h3>
+                    <p class="mt-2 text-gray-400">Engineering Quality. Accelerating Business.</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="linkedin" class="h-5 w-5"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="twitter" class="h-5 w-5"></i></a>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="font-semibold text-gray-200">Services</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Managed Services</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Automation</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Assessment</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Staff Augmentation</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="font-semibold text-gray-200">Company</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-4">
+                    <h4 class="font-semibold text-gray-200">Contact Us</h4>
+                    <ul class="mt-4 space-y-2 text-gray-400">
+                        <li class="flex items-center"><i data-lucide="mail" class="h-5 w-5 mr-2"></i> hello@sarvarth.com</li>
+                        <li class="flex items-center"><i data-lucide="phone" class="h-5 w-5 mr-2"></i> (555) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-800 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Sarvarth. All Rights Reserved. | <a href="#" class="hover:text-white">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Industry Insights Modal -->
+    <div id="insights-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-xl p-8 max-w-2xl w-full relative">
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
+                <i data-lucide="x" class="h-6 w-6"></i>
+            </button>
+            <h3 id="modal-title" class="text-2xl font-bold text-gray-900"></h3>
+            <div id="modal-loader" class="mt-6 flex justify-center hidden">
+                <div class="gemini-loader"></div>
+            </div>
+            <div id="modal-content" class="mt-4 text-gray-600"></div>
+        </div>
+    </div>
+
+    <script>
+        // Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        // No AI features enabled on GitHub Pages (demo only)
+    </script>
+</body>
+</html> 
