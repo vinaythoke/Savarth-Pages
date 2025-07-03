@@ -529,5 +529,26 @@
         });
         // No AI features enabled on GitHub Pages (demo only)
     </script>
+    <script>
+        // Industry Tabs Logic
+        document.querySelectorAll('.industry-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active styles from all tabs
+                document.querySelectorAll('.industry-tab').forEach(t => {
+                    t.classList.remove('active-tab', 'text-indigo-600', 'border-indigo-600');
+                    t.classList.add('text-gray-500', 'hover:text-indigo-600');
+                });
+                // Add active styles to clicked tab
+                this.classList.add('active-tab', 'text-indigo-600', 'border-indigo-600');
+                this.classList.remove('text-gray-500', 'hover:text-indigo-600');
+                // Hide all contents
+                document.querySelectorAll('.industry-content').forEach(c => c.classList.add('hidden'));
+                // Show the selected content
+                const target = this.getAttribute('data-tab');
+                const content = document.getElementById(target);
+                if (content) content.classList.remove('hidden');
+            });
+        });
+    </script>
 </body>
 </html> 
